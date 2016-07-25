@@ -1,72 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Bluetooth Test</title>
+<html>
+<head>
+    <title>Dan Klein Is Internet</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <base href="/portfolioinNG2/"> -->
 
+    <!-- Polymer / Material Design -->
+    <!-- NOTE: this makes me weep hot, bitter, jspm-tinged tears of rage -->
+    <!-- When it goes beta, we'll switch to https://github.com/angular/material2 -->
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+    <!-- NOTE: When using Polymer with Angular 2, enable "real" shadow dom -->
+    <script>
+      window.Polymer = window.Polymer || {};
+      window.Polymer.dom = 'shadow';
+    </script>
+    <link rel="import" href="bower_components/paper-styles/color.html">
+    <link rel="import" href="bower_components/paper-styles/default-theme.html">
+    <link rel="import" href="bower_components/paper-styles/shadow.html">
+    <link rel="import" href="bower_components/paper-styles/typography.html">
+    <link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
+    <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
+    <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="bower_components/iron-icons/av-icons.html">
+    <link rel="import" href="bower_components/iron-icons/social-icons.html">
+    <link rel="import" href="bower_components/paper-item/paper-item.html">
+    <link rel="import" href="bower_components/paper-item/paper-icon-item.html">
+    <link rel="import" href="bower_components/paper-button/paper-button.html">
+    <link rel="import" href="bower_components/paper-dialog/paper-dialog.html">
+    <link rel="import" href="bower_components/paper-dialog-behavior/paper-dialog-behavior.html">
+    <link rel="import" href="bower_components/paper-dialog-behavior/paper-dialog-shared-styles.html">
+    <link rel="import" href="bower_components/paper-input/paper-input.html">
+    <link rel="import" href="bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+    <link rel="import" href="bower_components/paper-menu/paper-menu.html">
+    <link rel="stylesheet" text="type/css" href="../../skeleton.css">
 
-  </head>
-  <body>
-    <form>
-      <input id="service" type="text" list="services" autofocus="" placeholder="Bluetooth Service">
-      <input id="name" type="text" placeholder="Device Name">
-      <input id="namePrefix" type="text" placeholder="Device Name Prefix">
-      <button>Get Bluetooth Device Info</button>
-    </form>
+    <style is="custom-style">
+          :root {
 
+            --paper-toolbar-title: {
+              /*font-weight: bold;*/
+              font-size: 1.5em;
+              line-height: 1.5em;
+            }
+          }
+    </style>
+    <!-- Polymer / Material Design -->
 
-<datalist id="services">
-  <option value="alert_notification">alert_notification</option>
-  <option value="automation_io">automation_io</option>
-  <option value="battery_service">battery_service</option>
-  <option value="blood_pressure">blood_pressure</option>
-  <option value="body_composition">body_composition</option>
-  <option value="bond_management">bond_management</option>
-  <option value="continuous_glucose_monitoring">continuous_glucose_monitoring</option>
-  <option value="current_time">current_time</option>
-  <option value="cycling_power">cycling_power</option>
-  <option value="cycling_speed_and_cadence">cycling_speed_and_cadence</option>
-  <option value="device_information">device_information</option>
-  <option value="environmental_sensing">environmental_sensing</option>
-  <option value="generic_access">generic_access</option>
-  <option value="generic_attribute">generic_attribute</option>
-  <option value="glucose">glucose</option>
-  <option value="health_thermometer">health_thermometer</option>
-  <option value="heart_rate">heart_rate</option>
-  <option value="human_interface_device">human_interface_device (blacklisted)</option>
-  <option value="immediate_alert">immediate_alert</option>
-  <option value="indoor_positioning">indoor_positioning</option>
-  <option value="internet_protocol_support">internet_protocol_support</option>
-  <option value="link_loss">link_loss</option>
-  <option value="location_and_navigation">location_and_navigation</option>
-  <option value="next_dst_change">next_dst_change</option>
-  <option value="phone_alert_status">phone_alert_status</option>
-  <option value="pulse_oximeter">pulse_oximeter</option>
-  <option value="reference_time_update">reference_time_update</option>
-  <option value="running_speed_and_cadence">running_speed_and_cadence</option>
-  <option value="scan_parameters">scan_parameters</option>
-  <option value="tx_power">tx_power</option>
-  <option value="user_data">user_data</option>
-  <option value="weight_scale">weight_scale</option>
-</datalist>
-
-
-
-
-<h3>Live Output</h3>
-<div id="output" class="output">
-  <div id="content"></div>
-  <div id="status"></div>
-  <pre id="log"></pre>
-</div>
-
-
-
-    <script type="text/javascript" src="js/main.js"></script>
-    <script type="text/javascript" src="js/config.js"></script>
-    <script type="text/javascript" src="js/chromesample.js"></script>
-    <script type="text/javascript" src="js/formHandler.js"></script>
-    <script type="text/javascript" src="js/dom.js"></script>
-    <script type="text/javascript" src="js/bluetoothCheck.js"></script>
-  </body>
+    <script src="jspm_packages/system.js"></script>
+    <script src="components/config.js"></script>
+    <script>
+        System.import("components");
+    </script>
+</head>
+<body class="fullbleed layout vertical" unresolved>
+    <my-app>Loading...</my-app>
+</body>
 </html>

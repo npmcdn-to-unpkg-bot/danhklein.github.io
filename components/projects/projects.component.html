@@ -1,0 +1,39 @@
+<!-- <h1>{{title}}</h1> -->
+
+<paper-drawer-panel right-drawer>
+  <paper-header-panel drawer>
+
+    <div *ngIf="selectedProject">
+
+      <img src="{{selectedProject.image}}">
+      <p>{{selectedProject.long}}</p>
+      <h3>Build</h3>
+      <p>{{selectedProject.build}}</p>
+      <a target="_blank" href="{{selectedProject.link}}">
+        <button>Deployed Site</button>
+      </a>
+      <a target="_blank" href="{{selectedProject.github}}">
+        <button>Github</button>
+      </a>
+    </div>
+
+  </paper-header-panel>
+
+
+  <paper-header-panel main>
+
+    <div role="listbox">
+      <div class="container">
+        <div class="posts">
+          <paper-item  class=" ind-post" *ngFor="let project of projects; let i = index" (click)="clicked(project)">
+            <div class="row" >
+              <img src="{{project.image}}">
+              <h2>{{project.title}}</h2>
+              <p> {{project.short}}</p>
+            </div>
+          </paper-item>
+        </div>
+      </div>
+    </div>
+  </paper-header-panel>
+</paper-drawer-panel>
